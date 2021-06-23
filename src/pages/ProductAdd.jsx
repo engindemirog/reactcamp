@@ -1,7 +1,8 @@
 import React from "react";
-import { Formik, Form,Field } from "formik";
+import { Formik, Form,Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { FormField, Button } from "semantic-ui-react";
+import { FormField, Button, Label } from "semantic-ui-react";
+import KodlamaIoTextInput from "../utilities/customFormControls/KodlamaIoTextInput";
 
 export default function ProductAdd() {
   const initialValues = { productName: "", unitPrice: 10 };
@@ -20,17 +21,10 @@ export default function ProductAdd() {
       }}
       >
         <Form className="ui form">
-          <FormField>
-            <Field name="productName" placeholder="Ürün adı"></Field>
-          </FormField>
-          <FormField>
-            <Field name="unitPrice" placeholder="Ürün fiyatı"></Field>
-          </FormField>
+          <KodlamaIoTextInput name="productName" placeholder="Ürün adı"/>
+          <KodlamaIoTextInput name="unitPrice" placeholder="Ürün fiyatı"/>
           <Button color="green" type="submit">Ekle</Button>
         </Form>
       </Formik>
   );
 }
-
-
-//22.35 Dersteyiz
